@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../src/styles/global.css";
+import CoffeePage from "./Components/CoffeeComponent/CoffeePage";
+import Home from "./Components/Home";
+import { Cart } from "./Components/Cart";
+import { Route , Routes} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <div>
+        <Routes>
+
+          <Route path="/" element={<Home />} />
+          <Route path="/coffees" element={ <CoffeePage />} />
+          <Route path="/cart" element={<Cart />} /> 
+          </Routes>
+           {/* <Route path="/menu">
+            <div className="App container mt-3 text-center">
+              <CoffeePage />
+            </div>
+          </Route>
+         */}
+       
+        {/* <Route path="/">
+           <Home/>
+        </Route>
+
+        <Route path="/coffeePage">
+        <CoffeePage />
+          </Route>
+
+          
+          <Route path="/cart">
+          <Cart />
+          </Route> */}
+          
+      </div>
   );
 }
-
 export default App;
